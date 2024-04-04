@@ -6,6 +6,8 @@ In a basic sense, this website would include things like a brief biography snipp
 
 My first milestone will be to get the first page set up. This will give me a base to work with when deciding how the rest of the website will be created. Next, I will plan to have all of the pages created and link with a nav bar or something, as well as have the styling (CSS) finished. The following week, I will work on making the forms do what they're supposed to, adding event listeners and getting those to work; depending on how much I get done, this may or may not include drag and drop. The final week will be me finishing any items I have not completed.
 
+(Maybe create a login or something where I can get in and change what is displayed. Save the books in 2 2D arrays where one is tobedisplayed and the other is notdisplayed, and I can drag and drop between the 2 and update what is shown; saves via api or localstorage. Can edit book details as well.)
+
 | Date | Milestone | Complete? |
 | ----- | ------------------- | ---------- |
 | 6 | first page | no |
