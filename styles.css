@@ -1,0 +1,16 @@
+.root{
+    --primaryForeground: rgb(176, 192, 188);
+    --secondaryForeground: rgb(193, 237, 204);
+    --background: rgb(167, 167, 169);
+    --text1: rgb(69, 63, 60);
+    --text2: rgb(121, 114, 112);
+    --accent: rgb(96, 119, 67);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    color: var(--text1);
+}
