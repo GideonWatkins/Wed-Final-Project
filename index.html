@@ -1,11 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Gideon Watkins Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
     <script type="module" src="UI.js"></script>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    hello
-</body>
+  </head>
+  <body>
+    <img src="booksbanner.jpg" alt="banner" id="banner" />
+    <div id="cardContainer">
+      <figcaption>
+        <a href="books.html">
+          <img src="book1.jpg" alt="link to books page" id="bookLink" />
+          <caption>
+            Books
+          </caption>
+        </a>
+      </figcaption>
+      <figcaption>
+        <a href="author.html">
+          <img src="" alt="link to author page" />
+          <caption>
+            Author
+          </caption>
+        </a>
+      </figcaption>
+      <figcaption>
+        <a href="shop.html">
+          <img src="" alt="link to shop page" />
+          <caption>
+            Shop
+          </caption>
+        </a>
+      </figcaption>
+    </div>
+    <article>
+      <form id="login">
+        <label for="input" id="label1">Admin Password:</label>
+        <input type="text" name="input" id="input" />
+        <input type="submit" value="Login" id="submit" />
+      </form>
+    </article>
+  </body>
 </html>
