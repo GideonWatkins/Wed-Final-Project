@@ -15,10 +15,12 @@ body{
     color: var(--text1);
     background-color: var(--background);
     font-size: 2em;
+    max-height: 100vh;
 }
 
 a{
     text-decoration: none;
+    color: var(--text1);
 }
 
 #banner{
@@ -27,13 +29,35 @@ a{
 }
 
 #cardContainer{
-    height: 16.5em; /* temporary fix */
+    height: 75%;
     overflow-y: scroll;
     background-color: var(--secondaryForeground);
 }
 
+#portraitContainer{
+    display: flex;
+    flex-direction: row;
+    height: 10%;
+    width: 100%;
+}
+
+#selfie{
+    height: 100%;
+    width: 20%;
+    min-width: 0;
+    margin: 1%;
+    margin-left: 0;
+}
+
+#filler{
+    height: 100%;
+    width: 75%;
+    min-width: 0;
+    margin-top: 0.5%;
+}
+
 figcaption{
-    height: 6em;
+    height: 9em;
     width: 60%;
     padding: .5em;
     border-style: solid;
@@ -50,6 +74,7 @@ figcaption{
 
 #login{
     margin: .5em;
+    height: 10%;
 }
 
 #label1{
