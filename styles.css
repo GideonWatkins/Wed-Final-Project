@@ -26,12 +26,15 @@ a{
 #banner{
     width: 100%;
     height: 4em;
+    margin: 0;
 }
 
 #cardContainer{
     height: 75%;
     overflow-y: scroll;
     background-color: var(--secondaryForeground);
+    margin: 0;
+    padding: 0;
 }
 
 #portraitContainer{
@@ -46,6 +49,7 @@ a{
     width: 20%;
     min-width: 0;
     margin: 1%;
+    margin-top: 0;
     margin-left: 0;
 }
 
@@ -66,10 +70,26 @@ figcaption{
     margin: .3em;
     background-color: var(--primaryForeground);
     margin-left: 18%;
+    min-height: 0;
+    min-width: 0;
 }
 
 #bookLink{
     height: 100%;
+    min-height: 0;
+    min-width: 0;
+}
+
+#authorLink{
+    height: 100%;
+    min-height: 0;
+    min-width: 0;
+}
+
+#shopLink{
+    height: 100%;
+    min-height: 0;
+    min-width: 0;
 }
 
 #login{
@@ -101,4 +121,65 @@ figcaption{
     border-color: var(--accent);
     background-color: var(--secondaryForeground);
     color: var(--text2);
+}
+
+
+
+/* author page  */
+#authorHeader{
+    text-align: center;
+    background-color: var(--secondaryForeground);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 6%;
+}
+
+#authorPage{
+    display: flex;
+    flex-direction: row;
+    margin-top: 3%;
+    background-color: var(--primaryForeground);
+}
+
+#profile{
+    text-align: center;
+    width: 20%;
+    img{
+        width: 100%;
+    }
+    background-color: var(--background);
+}
+
+#biography{
+    width: 75%;
+    margin: 1em;
+}
+
+.homeButton{
+    border-radius: 5%;
+    border-style: solid;
+    border-width: .2em;
+    border-color: var(--secondaryForeground);
+    background-color: var(--text1);
+    color: var(--accent);
+    padding: .1em;
+}
+
+/* books page  */
+#booksHeader{
+    text-align: center;
+    background-color: var(--secondaryForeground);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 6%;
+}
+
+#booksPage{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3%;
+    background-color: var(--primaryForeground);
+    text-align: center;
 }
