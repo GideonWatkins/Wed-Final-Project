@@ -2,19 +2,24 @@ import { GetAllBooks } from "./service.js";
 
 export var ApiBooksList = await GetAllBooks();
 
-export var CartList = [
+var CartList = [
 
 ];
+
+export const GetCartList = () => {
+    return [...CartList]
+}
 
 export var PrivateBooksList = [
 
 ];
 
 export const RemoveFromList = (list, item) =>{
-    const index = list.indexOf(item);
-    list.splice(index,1);
+    const index = CartList.indexOf(item);
+    CartList.splice(index,1);
 }
 
 export const AddToList = (list, item) => {
-    list.push(item);
+    //add something that filters for book by title
+    CartList.push(item);
 }

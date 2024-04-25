@@ -1,5 +1,5 @@
 import { adminValidation, checkPassword } from "./domain-users.js";
-import { AddToList, CartList, RemoveFromList, ApiBooksList } from "./domain.js";
+import { AddToList, GetCartList, RemoveFromList, ApiBooksList } from "./domain.js";
 
 var StoreList = await ApiBooksList;
 
@@ -26,9 +26,10 @@ const RenderStore = () => {
       book.classList.add("shopCard");
       storeContainer.appendChild(book);
 
-      book.addEventListener("drag", (event) => {
+      book.addEventListener("dragstart", (event) => {
         draggedBook = item;
         rejectedBook = null;
+        event.dataTransfer.setData("text/plain", item.title)
         //   why does this work 1st time but adds array[3] 2nd time?
       });
     });
@@ -39,7 +40,7 @@ const RenderStore = () => {
     dropArea.addEventListener("drop", (event) => {
       event.preventDefault();
       if (draggedBook === null) {
-        RemoveFromList(CartList, rejectedBook);
+        RemoveFromList(GetCartList(), rejectedBook);
         RenderCart();
       }
     });
@@ -50,7 +51,7 @@ const RenderCart = () => {
   const cartContainer = document.getElementById("purchaseContainer");
   if (cartContainer) {
     cartContainer.replaceChildren();
-    CartList.forEach((item) => {
+    GetCartList().forEach((item) => {
       const book = document.createElement("div");
       const bookTitle = document.createElement("div");
       const bookdescription = document.createElement("div");
@@ -77,12 +78,9 @@ const RenderCart = () => {
     });
     dropArea.addEventListener("drop", (event) => {
       event.preventDefault();
-      if (rejectedBook === null) {
-        AddToList(CartList, draggedBook);
-        console.log(draggedBook);
+      console.log(event.dataTransfer.getData("text/plain"))
+        AddToList(GetCartList(), draggedBook);
         RenderCart();
-        draggedBook = null;
-      }
     });
   }
 };
