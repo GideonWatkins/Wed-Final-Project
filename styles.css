@@ -75,6 +75,7 @@ figcaption{
 }
 
 #bookLink{
+    width: 75%;
     height: 100%;
     min-height: 0;
     min-width: 0;
@@ -87,6 +88,7 @@ figcaption{
 }
 
 #shopLink{
+    width: 75%;
     height: 100%;
     min-height: 0;
     min-width: 0;
@@ -182,4 +184,83 @@ figcaption{
     margin-top: 3%;
     background-color: var(--primaryForeground);
     text-align: center;
+}
+
+/* shop page */
+#shopBody{
+    margin: 0;
+    padding: 0;
+}
+
+#shopHeader{
+    margin: 5%;
+    align-self: center;
+    color: var(--text1);
+    font-size: 1.2em;
+    min-width: 0;
+    min-height: 0;
+}
+
+#howTo{
+    margin: 5%;
+    margin-top: 2%;
+    color: var(--text1);
+    font-size: 0.9em;
+    min-width: 0;
+    min-height: 0;
+}
+
+#mainBody{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+#shopContainer{
+    margin-right: 0;
+    width: 45%;
+    margin: 1%;
+    padding: 2%;
+    min-height: 40%;
+    border-style: solid;
+    border-radius: 2em;
+    border-width: 1em;
+    border-color: var(--secondaryForeground);
+    background-color: var(--primaryForeground);
+}
+
+#purchaseContainer{
+    width: 45%;
+    margin: 1%;
+    padding: 2%;
+    min-height: 40%;
+    border-style: solid;
+    border-radius: 2em;
+    border-width: 1em;
+    border-color: var(--secondaryForeground);
+    background-color: var(--primaryForeground);
+}
+
+.cartCard{
+    background-color: var(--accent);
+    color: var(--accent);
+    border-radius: 1em;
+    border-style: solid;
+    border-width: .3em;
+    width: 98%;
+    font-size: .7em;
+    min-width: 0;
+    min-height: 0;
+}
+
+.shopCard{
+    background-color: var(--text1);
+    color: var(--text2);
+    border-radius: 1em;
+    border-style: solid;
+    border-width: .3em;
+    width: 98%;
+    font-size: .7em;
+    min-width: 0;
+    min-height: 0;
 }
