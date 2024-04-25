@@ -8,79 +8,83 @@ var rejectedBook = null;
 
 const RenderStore = () => {
   const storeContainer = document.getElementById("shopContainer");
-  storeContainer.replaceChildren();
-  StoreList.forEach((item) => {
-    const book = document.createElement("div");
-    const bookTitle = document.createElement("div");
-    const bookdescription = document.createElement("div");
-    const bookSeries = document.createElement("div");
-    bookTitle.textContent = "Title: " + item.title;
-    bookdescription.textContent = "Description: " + item.description;
-    bookSeries.textContent = "Part of the Series: " + item.series;
+  if (storeContainer) {
+    storeContainer.replaceChildren();
+    StoreList.forEach((item) => {
+      const book = document.createElement("div");
+      const bookTitle = document.createElement("div");
+      const bookdescription = document.createElement("div");
+      const bookSeries = document.createElement("div");
+      bookTitle.textContent = "Title: " + item.title;
+      bookdescription.textContent = "Description: " + item.description;
+      bookSeries.textContent = "Part of the Series: " + item.series;
 
-    book.appendChild(bookTitle);
-    book.appendChild(bookdescription);
-    book.appendChild(bookSeries);
-    book.draggable = true;
-    book.classList.add("shopCard");
-    storeContainer.appendChild(book);
+      book.appendChild(bookTitle);
+      book.appendChild(bookdescription);
+      book.appendChild(bookSeries);
+      book.draggable = true;
+      book.classList.add("shopCard");
+      storeContainer.appendChild(book);
 
-    book.addEventListener("drag", (event) => {
-      draggedBook = item;
-      rejectedBook = null;
-      //   why does this work 1st time but adds array[3] 2nd time?
+      book.addEventListener("drag", (event) => {
+        draggedBook = item;
+        rejectedBook = null;
+        //   why does this work 1st time but adds array[3] 2nd time?
+      });
     });
-  });
-  const dropArea = document.getElementById("shopContainer");
-  dropArea.addEventListener("dragover", (event) => {
-    event.preventDefault();
-  });
-  dropArea.addEventListener("drop", (event) => {
-    event.preventDefault();
-    if (draggedBook === null) {
-      RemoveFromList(CartList, rejectedBook);
-      RenderCart();
-    }
-  });
+    const dropArea = document.getElementById("shopContainer");
+    dropArea.addEventListener("dragover", (event) => {
+      event.preventDefault();
+    });
+    dropArea.addEventListener("drop", (event) => {
+      event.preventDefault();
+      if (draggedBook === null) {
+        RemoveFromList(CartList, rejectedBook);
+        RenderCart();
+      }
+    });
+  }
 };
 
 const RenderCart = () => {
   const cartContainer = document.getElementById("purchaseContainer");
-  cartContainer.replaceChildren();
-  CartList.forEach((item) => {
-    const book = document.createElement("div");
-    const bookTitle = document.createElement("div");
-    const bookdescription = document.createElement("div");
-    const bookSeries = document.createElement("div");
-    bookTitle.textContent = "Title: " + item.title;
-    bookdescription.textContent = "Description: " + item.description;
-    bookSeries.textContent = "Part of the Series: " + item.series;
+  if (cartContainer) {
+    cartContainer.replaceChildren();
+    CartList.forEach((item) => {
+      const book = document.createElement("div");
+      const bookTitle = document.createElement("div");
+      const bookdescription = document.createElement("div");
+      const bookSeries = document.createElement("div");
+      bookTitle.textContent = "Title: " + item.title;
+      bookdescription.textContent = "Description: " + item.description;
+      bookSeries.textContent = "Part of the Series: " + item.series;
 
-    book.appendChild(bookTitle);
-    book.appendChild(bookdescription);
-    book.appendChild(bookSeries);
-    book.draggable = true;
-    book.classList.add("cartCard");
-    cartContainer.appendChild(book);
+      book.appendChild(bookTitle);
+      book.appendChild(bookdescription);
+      book.appendChild(bookSeries);
+      book.draggable = true;
+      book.classList.add("cartCard");
+      cartContainer.appendChild(book);
 
-    book.addEventListener("drag", (event) => {
-      draggedBook = null;
-      rejectedBook = item;
+      book.addEventListener("drag", (event) => {
+        draggedBook = null;
+        rejectedBook = item;
+      });
     });
-  });
-  const dropArea = document.getElementById("purchaseContainer");
-  dropArea.addEventListener("dragover", (event) => {
-    event.preventDefault();
-  });
-  dropArea.addEventListener("drop", (event) => {
-    event.preventDefault();
-    if (rejectedBook === null) {
-      AddToList(CartList, draggedBook);
-      console.log(draggedBook);
-      RenderCart();
-      draggedBook = null;
-    }
-  });
+    const dropArea = document.getElementById("purchaseContainer");
+    dropArea.addEventListener("dragover", (event) => {
+      event.preventDefault();
+    });
+    dropArea.addEventListener("drop", (event) => {
+      event.preventDefault();
+      if (rejectedBook === null) {
+        AddToList(CartList, draggedBook);
+        console.log(draggedBook);
+        RenderCart();
+        draggedBook = null;
+      }
+    });
+  }
 };
 
 const SetUpSubmit = () => {
