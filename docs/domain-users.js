@@ -9,6 +9,6 @@ export const checkPassword = (input) => {
 
 export const adminValidation = (input) => {
     if(checkPassword(input)){
-        window.location.href = "admin.html"
+        window.location.href = "./admin.html"
     }
 }
