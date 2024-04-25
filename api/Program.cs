@@ -44,6 +44,10 @@ var books = new List<Book>()
     )
 };
 
+app.MapGet("/", () => {
+    return new Book("something", "must be cool", "none");
+});
+
 app.MapGet("/books", () => {
     return books;
 });

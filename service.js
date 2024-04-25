@@ -1,5 +1,5 @@
 export const GetAllBooks = async () => {
-    const url = "http://localhost:5082/books";
+    const url = "http://localhost:5274/books";
     const response = await fetch(url);
     return await response.json();
 }

@@ -83,22 +83,27 @@ const RenderCart = () => {
   });
 };
 
-const submit = document.getElementById("submit");
-const passInput = document.getElementById("input");
-submit.addEventListener("click", (event) => {
-  event.preventDefault();
-  if (passInput.value === "") {
-    const error = document.getElementById("errorMsg");
-    error.textContent = "";
-  } else if (!checkPassword(passInput.value)) {
-    const error = document.getElementById("errorMsg");
-    error.textContent = "Invalid Password";
-  } else {
-    const error = document.getElementById("errorMsg");
-    error.textContent = "";
-    adminValidation(passInput.value);
+const SetUpSubmit = () => {
+  const submit = document.getElementById("submit");
+  const passInput = document.getElementById("input");
+  if (submit) {
+    submit.addEventListener("click", (event) => {
+      event.preventDefault();
+      if (passInput.value === "") {
+        const error = document.getElementById("errorMsg");
+        error.textContent = "";
+      } else if (!checkPassword(passInput.value)) {
+        const error = document.getElementById("errorMsg");
+        error.textContent = "Invalid Password";
+      } else {
+        const error = document.getElementById("errorMsg");
+        error.textContent = "";
+        adminValidation(passInput.value);
+      }
+    });
   }
-});
+};
 
+SetUpSubmit();
 RenderStore();
 RenderCart();
