@@ -1,5 +1,7 @@
 import { adminValidation, checkPassword } from "./domain-users.js";
-import { AddToList, CartList, RemoveFromList, StoreList } from "./domain.js";
+import { AddToList, CartList, RemoveFromList, ApiBooksList } from "./domain.js";
+
+var StoreList = await ApiBooksList;
 
 var draggedBook = null;
 var rejectedBook = null;
