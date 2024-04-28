@@ -5,7 +5,17 @@ export const GetAllBooks = async () => {
     return await response.json();
 }
 
+export const SavePrivateBooks = (list) => {
+    const listAsString = JSON.stringify(list);
+    localStorage.setItem("myBooks", listAsString);
+  };
 
+  export const LoadPrivateBooks = () => {
+    return JSON.parse(localStorage.getItem("myBooks"));
+  }
 
+  export const ResetStorage = () => {
+    localStorage.clear();
+  }
 
 //500 error messages mean that you accessed a server and received a response, albeit an angry one

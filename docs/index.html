@@ -6,7 +6,7 @@
     <script type="module" src="./UI.js"></script>
   </head>
   <body>
-    <img src="./booksbanner.jpg" alt="banner" id="banner" />
+    <img src="./booksbanner.jpg" alt="banner" class="banner" />
     <div id="cardContainer">
       <div id="portraitContainer">
         <img src="./portraitmeme.jpg" alt="portrait" id="selfie">
@@ -42,13 +42,14 @@
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </article>
     </div>
-    <article>
+    <nav>
       <form id="login">
         <label for="input" id="label1">Admin Password:</label>
         <input type="text" name="input" id="input"/>
         <input type="submit" value="Login" id="submit"/>
+        <input type="reset" value="reset" id="reset">
       </form>
       <div id="errorMsg"></div>
-    </article>
+    </nav>
   </body>
 </html>
